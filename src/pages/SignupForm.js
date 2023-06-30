@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../css/signup.css'
 
 
 function SignupForm() {
@@ -49,7 +50,8 @@ function SignupForm() {
 
 
     return (
-        <form onSubmit={handleSignupSubmit}>
+        <div className="signup-container">
+        <form onSubmit={handleSignupSubmit} className='signup-form'>
             <h2>Sign Up</h2>
             <div className='mb-3'>
                 <label htmlFor='firstName' className='form-label'>First Name:</label>
@@ -96,9 +98,10 @@ function SignupForm() {
                   onChange={handleInputChange}
                 />
             </div>
+            
             <button type='submit' className="btn btn-primary">Sign Up</button>
-
         </form>
+        </div>
         );
 }
 
