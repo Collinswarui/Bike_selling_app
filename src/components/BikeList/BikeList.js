@@ -1,27 +1,38 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-//import BikeItem from "./BikeItem";
+import { Link } from "react-router-dom";
+//import BikeDetails from "../BikeDetails/BikeDetails";
+import mountainBikeImage from '../../images/Bike3.jpeg';
+import cityBikeImage from '../../images/bmw.jpg';
+import roadBikeImage from '../../images/kawa2.jpg';
 
 const bikes = [
-    { id: 1, name: "Mountain Bike", price:500 },
-    { id: 2, name: "City Bike", price: 800 },
-    { id: 3, name: "Road Bike", price: 350 },
+  { id: 1, name: "Mountain Bike", Engine_capacity:'998 cc', Top_Speed:'299 (km/h)', price: 5000, image: mountainBikeImage },
+  { id: 2, name: "BMW S 1000 RR", Engine_capacity:'999 cc', Top_Speed:'303 (km/h)', price: 6000, image: cityBikeImage },
+  { id: 3, name: "Ninja H2 Kawasaki", Engine_capacity:'998 cc', Top_Speed:'400 (km/h)', price: 8500, image: roadBikeImage },
 ];
 
 function BikeList() {
-    return (
-        <div className="container">
-        <h2 className="mt-4 mb-3">Bikes for Sale</h2>
-        <ul className="list-group">
-          {bikes.map((bike) => (
-            <li key={bike.id} className="list-group-item d-flex justify-content-between align-items-center">
-              <a href={`/bike/${bike.id}`} className="text-decoration-none">{bike.name}</a>
-              <span className="badge bg-primary rounded-pill">Price: ${bike.price}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+  return (
+    <div className="container">
+      <h2 className="mt-4 mb-3">Bikes for Sale</h2>
+      <ul className="list-group">
+        {bikes.map((bike) => (
+          <li key={bike.id} className="list-group-item d-flex justify-content-between align-items-center">
+            {/* Image */}
+            <img src={bike.image} alt={bike.name} style={{ width: "100px", height: "100px", marginRight: "10px" }} />
+            <Link to={`/bikes/${bike.id}`} className="text-decoration-none">
+              {bike.name}
+            </Link>
+            <span className="badge bg-primary rounded-pill">Price: ${bike.price}</span>
+          </li>
+        ))}
+      </ul>
+
+      {/* Add BikeDetails component and pass the bikes array as a prop */}
+      {/* <BikeDetails bikes={bikes} /> */}
+    </div>
+  );
 }
 
 export default BikeList;

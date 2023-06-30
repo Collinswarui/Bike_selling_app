@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import SignupForm from './SignupForm';
+import LoginForm from './LoginForm';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/style.css';
 
@@ -7,9 +8,14 @@ import '../css/style.css';
 function LandingPage() {
     
     const [showSignUp, setShowSignUp] = useState(false);
+    const [showLogin, setShowLogin] = useState(false);
 
   const handleSignUpClick = () => {
     setShowSignUp(true);
+  };
+
+  const handleLoginClick = () => {
+    setShowLogin(true);
   };
 
     return (
@@ -19,15 +25,20 @@ function LandingPage() {
             <p className="responsive-paragraph" style={{color: 'white'}}>Join our community and explore a wide range of bikes</p>
             <div className='row'>
                 <div className='col-md-6'>
-                {!showSignUp && (
+                {!showSignUp && !showLogin && (
         <div className="signup-button-container"> 
         <button className="btn btn-primary btn-sm" onClick={handleSignUpClick}>
           Sign Up
         </button>
+        <button className='btn btn-primary btn-sm' onClick={handleLoginClick}>
+         Login
+       </button>
         </div>
+        
       )}
 
-      {showSignUp && <SignupForm />}
+      {showSignUp && <SignupForm handleSignUpClick={handleSignUpClick} />}
+      {showLogin && <LoginForm />}
           
                 </div>
             </div>

@@ -1,7 +1,7 @@
 .signup-form {
-    border: 2px solid #fa7c06;
+    
     padding: 20px;
-    border-radius: 25px;
+   
    
   }
   .signup-container {
@@ -12,6 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #817e7e;
+    border-radius: 25px;
+    border: 2px solid #777474;
 
   } 
   .signup-button-container {
@@ -21,4 +24,16 @@
     display: flex;
     justify-content: flex-end;
   }
-  
+  .form-label{
+    color: rgb(8, 8, 8);
+    font-size: larger;
+}  
+.heading2{
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+  text-align: center;
+}
+.alternate{
+  color: aliceblue;
+}
