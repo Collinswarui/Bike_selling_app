@@ -1,14 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import '../../css/style.css';
 
 
 const BikeDetails = ({ bikes }) => {
   const { id } = useParams();
   const bike = bikes.find((bike) => bike.id === parseInt(id));
+  const navigate = useNavigate();
 
   if (!bike) {
     return <div>Bike not found.</div>;
   }
+
+  const currentIndex = bikes.findIndex((bike) => bike.id === parseInt(id));
+  const totalBikes = bikes.length;
+
+  const handleNextBike = () => {
+    const nextIndex = (currentIndex + 1) % totalBikes;
+    navigate(`/bikes/${bikes[nextIndex].id}`);
+  };
 
   return (
     <div className="container">
@@ -30,6 +40,8 @@ const BikeDetails = ({ bikes }) => {
           <p className="card-text">Bike ID: {bike.id}</p>
         </div>
       </div>
+      <button
+        className="arrow-button" onClick={handleNextBike}></button>
     </div>
   );
 };

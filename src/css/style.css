@@ -80,6 +80,27 @@ body {
     padding: 10px;
     margin-bottom: 10px;
   }
+  .arrow-button {
+    position: fixed;
+    bottom: 50%; /* Adjust the vertical position */
+    right: 10px; /* Adjust the horizontal position */
+    transform: translateY(50%);
+    font-size: 20px;
+    padding: 10px 16px;
+    border-radius: 50%;
+    background-color: #007bff; /* Adjust the background color as desired */
+    color: #fff; /* Adjust the text color as desired */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  .arrow-button::before {
+    content: "\2192"; /* Unicode code point for right arrow */
+  }
+  .arrow-button:hover {
+    background-color: #0056b3; /* Adjust the hover background color as desired */
+  }
   
   /* Media queries for responsiveness */
   @media (max-width: 768px) {
