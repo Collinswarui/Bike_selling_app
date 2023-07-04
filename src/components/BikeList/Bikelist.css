@@ -1,0 +1,49 @@
+.container{
+    margin-top: 20px;
+
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(7, 135, 240);
+    font-weight: bold;
+    
+}
+
+.list-group-item{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+.list-group-item img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    
+}
+.list-group-item .bike-details{
+    flex: 1;
+
+}
+.list-group-item .bike-details h4{
+    margin: 0;
+}
+.badge{
+    background-color: #007bff;
+}
+.list-group-item .add-to-cart-button{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.list-group-item .add-to-cart-button:hover{
+    background-color: #218838;
+}
