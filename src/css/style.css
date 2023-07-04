@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    
+
+
   }
   
   .container {
@@ -13,20 +16,22 @@ body {
   /* Header styles */
   h1 {
     text-align: center;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 20px;
    
   }
   
   .custom-heading{
-    color:cyan;
+    color:rgb(224, 66, 18);
     font-weight: bolder;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 6%;
+
   }
   
   /* Navigation styles */
   .navbar {
-    background-color: #333;
+    background-color: #181616;
     color: #fff;
     padding: 10px;
   }

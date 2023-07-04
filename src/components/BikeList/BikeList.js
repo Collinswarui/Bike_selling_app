@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
+import './Bikelist.css'
 //import BikeDetails from "../BikeDetails/BikeDetails";
 import mountainBikeImage from '../../images/Bike3.jpeg';
 import cityBikeImage from '../../images/bmw.jpg';
@@ -13,11 +14,32 @@ const bikes = [
 ];
 
 function BikeList() {
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const filteredBikes = bikes.filter(bike =>
+    bike.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const handleSearchChange = (e) => {
+      setSearchQuery(e.target.value);
+    };
+
   return (
     <div className="container">
       <h2 className="mt-4 mb-3">Bikes for Sale</h2>
+      {/* Search input*/}
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search bikes..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+
+      </div>
       <ul className="list-group">
-        {bikes.map((bike) => (
+        {filteredBikes.map((bike) => (
           <li key={bike.id} className="list-group-item d-flex justify-content-between align-items-center">
             {/* Image */}
             <img src={bike.image} alt={bike.name} style={{ width: "100px", height: "100px", marginRight: "10px" }} />

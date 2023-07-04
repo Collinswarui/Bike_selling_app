@@ -1,13 +1,15 @@
 import React from 'react';
 import  { BrowserRouter as Router,  Routes,Route} from 'react-router-dom';
 import './css/style.css';
+import './components/navbar/navbar.css';
 import backgroundImage from './images/Bike6.jpg';
-//import LandingPage from './pages/LandingPage';
 import  BikeList from "./components/BikeList/BikeList";
 import BikeDetails from "./components/BikeDetails/BikeDetails";
 import Cart from "./components/Cart/Cart";
-//import SignupForm from './pages/SignupForm';
-//import LoginForm from './pages/LoginForm';
+import Navbar from './components/navbar/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 import mountainBikeImage from './images/Bike3.jpeg';
 import cityBikeImage from './images/bmw.jpg';
@@ -33,6 +35,7 @@ function App() {
   return (
     <Router>
       <div className="landing-page" style={backgroundStyle}>
+        <Navbar />
         <div>
           <h1 className="display-4 text-center text-sm-center text-md-center text-lg-center custom-heading">SwiftRider</h1>
 

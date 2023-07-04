@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import '../../css/style.css';
+//import '../../css/style.css';
+import './BikeDetails.css';
 
 
 const BikeDetails = ({ bikes }) => {
