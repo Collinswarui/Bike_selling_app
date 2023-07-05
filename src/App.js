@@ -7,7 +7,7 @@ import  BikeList from "./components/BikeList/BikeList";
 import BikeDetails from "./components/BikeDetails/BikeDetails";
 import Cart from "./components/Cart/Cart";
 import Navbar from './components/navbar/Navbar';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 
