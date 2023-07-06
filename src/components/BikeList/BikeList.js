@@ -13,7 +13,7 @@ const bikes = [
   { id: 3, name: "Ninja H2 Kawasaki", Engine_capacity:'998 cc', Top_Speed:'400 (km/h)', price: 8500, image: roadBikeImage },
 ];
 
-function BikeList({ bikes, addToCart }) {
+function BikeList() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const filteredBikes = bikes.filter(bike =>
@@ -39,7 +39,7 @@ function BikeList({ bikes, addToCart }) {
 
       </div>
       <ul className="list-group">
-        {bikes.map((bike) => (
+        {filteredBikes.map((bike) => (
           <li key={bike.id} className="list-group-item d-flex justify-content-between align-items-center">
             {/* Image */}
             <img src={bike.image} alt={bike.name} style={{ width: "100px", height: "100px", marginRight: "10px" }} />
@@ -47,7 +47,6 @@ function BikeList({ bikes, addToCart }) {
               {bike.name}
             </Link>
             <span className="badge bg-primary rounded-pill">Price: ${bike.price}</span>
-            <button onClick={() => addToCart(bike)}>Add toCart</button>
           </li>
         ))}
       </ul>
