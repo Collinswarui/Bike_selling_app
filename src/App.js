@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import  { BrowserRouter as Router,  Routes,Route} from 'react-router-dom';
 import './css/style.css';
 import './components/navbar/navbar.css';
@@ -31,21 +31,34 @@ function App() {
    
     
   };
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (bike) => {
+      setCartItems([...cartItems, bike]);
+    };
+  const removeFromCart = (bike) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== bike.id);
+    setCartItems(updatedCartItems);
+  };
 
   return (
     <Router>
       <div className="landing-page" style={backgroundStyle}>
-        <Navbar />
+        <Navbar cartItemCount={cartItems.length} />
         <div>
           <h1 className="display-4 text-center text-sm-center text-md-center text-lg-center custom-heading">SwiftRider</h1>
 
           <Routes>
             {/* Render the BikeList component */}
-            <Route path="/" element={<BikeList bikes={bikes} />} />
+            <Route 
+              path="/" 
+              element={<BikeList bikes={bikes} addToCart={addToCart}/>} />
             
             {/* Render the BikeDetails component */}
             <Route path="/bikes/:id" element={<BikeDetails bikes={bikes} />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route 
+              path="/cart" 
+              element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} />} />
           </Routes>
         </div>
       </div>
