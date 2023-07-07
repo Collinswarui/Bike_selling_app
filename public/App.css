@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.item {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Media queries */
+
+@media (min-width: 576px) {
+  .container {
+    padding: 30px;
+  }
+  
+  .item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 40px;
+  }
+  
+  .item {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 60px;
+  }
+  
+  .item {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 80px;
+  }
+  
+  .item {
+    width: 20%;
+  }
+}

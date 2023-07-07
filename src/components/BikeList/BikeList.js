@@ -43,11 +43,11 @@ function BikeList({  addToCart }) {
           <li key={bike.id} className="list-group-item d-flex justify-content-between align-items-center">
             {/* Image */}
             <img src={bike.image} alt={bike.name} style={{ width: "100px", height: "100px", marginRight: "10px" }} />
-            <Link to={`/bikes/${bike.id}`} className="text-decoration-none">
+            <Link to={`/bikes/${bike.id}`} className="text-decoration-none" style={{ fontSize: '16px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
               {bike.name}
             </Link>
             <span className="badge bg-primary rounded-pill">Price: ${bike.price}</span>
-            <button onClick={() => addToCart(bike)}>Add to Cart</button>
+            <button className="add-to-cart-button" onClick={() => addToCart(bike)}>Add to Cart</button>
 
           </li>
         ))}

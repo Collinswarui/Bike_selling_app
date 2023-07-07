@@ -1,5 +1,6 @@
 import React, {useState } from 'react';
 import  { BrowserRouter as Router,  Routes,Route} from 'react-router-dom';
+//import './App.css'
 import './css/style.css';
 import './components/navbar/navbar.css';
 import backgroundImage from './images/Bike6.jpg';
@@ -45,7 +46,8 @@ function App() {
 
   return (
     <Router>
-      <div className="landing-page" style={backgroundStyle}>
+      <div className="container" style={backgroundStyle}>
+        <div className='item'>
         <Navbar cartItemCount={cartItems.length}/>
         <div>
           <h1 className="display-4 text-center text-sm-center text-md-center text-lg-center custom-heading">SwiftRider</h1>
@@ -62,6 +64,7 @@ function App() {
               element={<Cart cartItems={cartItems} removeFromCart={removeFromCart} />}
             />
           </Routes>
+        </div>
         </div>
       </div>
     </Router>
