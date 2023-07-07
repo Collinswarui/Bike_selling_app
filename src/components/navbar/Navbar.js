@@ -3,7 +3,7 @@ import { Link  } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const Navbar = () => {
+const Navbar = ({ cartItemCount }) => {
     return (
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
             <div className='container'>
@@ -25,9 +25,11 @@ const Navbar = () => {
                         <Link to="/" className='nav-link'>Home</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/cart">
-                        <FontAwesomeIcon icon={faShoppingCart} />
-
+                        <Link to="/cart" className='nav-link'>
+                          <FontAwesomeIcon icon={faShoppingCart} />
+                          {cartItemCount > 0 && (
+                            <span className='badge bg-danger'>{cartItemCount}</span>
+                          )}
                         </Link>
                     </li>
                 </ul>
